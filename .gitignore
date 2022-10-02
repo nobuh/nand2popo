@@ -1,0 +1,7 @@
+/.phpunit.result.cache
+/composer.phar
+/phpunit.xml.bak
+/vendor/
+/nand2popo/
+/nand2tetris.org/
+

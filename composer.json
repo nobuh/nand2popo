@@ -1,0 +1,19 @@
+{
+    "name": "nobuh/nand2popo",
+    "type": "project",
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nobuh\\Nand2popo\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "nobuh",
+            "email": "nobu.hatano@gmail.com"
+        }
+    ],
+    "require": {}
+}
