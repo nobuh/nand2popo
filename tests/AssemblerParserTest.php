@@ -1,5 +1,5 @@
 <?php declare(strict_types=1);
-use \Nobuh\Nand2popo\Assembler\Parser;
+use Nobuh\Nand2popo\Assembler\Parser;
 use function PHPUnit\Framework\assertSame;
 
 class AssemblerParserTest extends \PHPUnit\Framework\TestCase
