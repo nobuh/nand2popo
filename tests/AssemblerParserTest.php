@@ -8,7 +8,7 @@ class AssemblerParserTest extends \PHPUnit\Framework\TestCase
     {
         $p = new Parser("tests/oneline.txt");
         assertSame(true, $p->hasMoreCommands());
-        fgets($p->fd);
+        $p->advance();
         assertSame(false, $p->hasMoreCommands());
     }
 }
