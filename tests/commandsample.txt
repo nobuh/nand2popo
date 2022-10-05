@@ -1,0 +1,3 @@
+    AD=D-1;JGT  // sample
+       (123)    // label
+       @123     // address
