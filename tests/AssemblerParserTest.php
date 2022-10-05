@@ -42,17 +42,17 @@ class AssemblerParserTest extends \PHPUnit\Framework\TestCase
         $p = new Parser("tests/commandsample.txt");
         $p->advance();
         assertSame('AD=D-1;JGT', $p->currentCommand);
-        assertSame('AD', $p->dest);
+        assertSame('AD', $p->dest());
         assertSame('D-1', $p->comp);
         assertSame('JGT', $p->jump);
 
         $p->advance();
-        assertSame('', $p->dest);
+        assertSame('', $p->dest());
         assertSame('(123)', $p->comp);
         assertSame('', $p->jump);
 
         $p->advance();
-        assertSame('', $p->dest);
+        assertSame('', $p->dest());
         assertSame('@123', $p->comp);
         assertSame('', $p->jump);
     }        

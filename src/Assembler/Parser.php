@@ -68,6 +68,10 @@ class Parser
 
     public function dest(): string
     {
-        return "A";
+        if (preg_match('/[AMD]+/', $this->dest)) {
+            return $this->dest;
+        } else {
+            return '';
+        }
     }
 }
