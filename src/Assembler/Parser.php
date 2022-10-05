@@ -66,12 +66,83 @@ class Parser
         return Command::C_COMMAND;
     }
 
+    public function symbol(): string
+    {
+        if (preg_match('/\(([A-Z0-9]+)\)/', $this->comp, $matched)) {
+            return $matched[1];
+        }
+        if (preg_match('/@([A-Z0-9]+)/', $this->comp, $matched)) {
+            return $matched[1];
+        }
+        return '';
+    }
+
     public function dest(): string
     {
-        if (preg_match('/[AMD]+/', $this->dest)) {
-            return $this->dest;
-        } else {
-            return '';
+        switch ($this->dest) {
+            case 'M':
+            case 'D':
+            case 'MD':
+            case 'A':
+            case 'AM':
+            case 'AD':
+            case 'AMD':
+                return $this->dest;
+            default:
+                return '';
+        }
+    }
+
+    public function comp(): string
+    {
+        switch ($this->comp) {
+            case '0':
+            case '1':
+            case '-1':
+            case 'D':
+            case 'A':
+            case 'M':
+            case '!D':
+            case '!A':
+            case '!M':
+            case '-D':
+            case '-A':
+            case '-M':
+            case 'D+1':
+            case 'A+1':
+            case 'M+1':
+            case 'D-1':
+            case 'A-1':
+            case 'M-1':
+            case 'D+A':
+            case 'D+M':
+            case 'D-A':
+            case 'D-M':
+            case 'A-D':
+            case 'M-D':
+            case 'D&A':
+            case 'D&M':
+            case 'D|A':
+            case 'D|M':
+                return $this->comp;
+            default:
+                return '';
+        }
+    }
+
+    public function jump(): string
+    {
+        switch ($this->jump) {
+            case 'JGT':
+            case 'JEQ':
+            case 'JGE':
+            case 'JLT':
+            case 'JNE':
+            case 'JLE':
+            case 'JMP':
+                return $this->jump;
+            default:
+                return '';
         }
     }
 }
