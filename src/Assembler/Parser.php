@@ -21,6 +21,11 @@ class Parser
 
     public function advance(): void
     {
+        $this->comp = '';
+        $this->dest = '';
+        $this->jump = '';
+        $this->currentCommand = '';
+        
         if ($this->hasMoreCommands() && ($s = fgets($this->fd))) {
             // remove tail new line char
             $s = rtrim($s);
@@ -52,6 +57,8 @@ class Parser
                 $this->currentCommand = '';
                 $this->comp = '';
             }
+        } else {
+            $this->currentCommand = '';
         }
     }
 

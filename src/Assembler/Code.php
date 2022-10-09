@@ -71,7 +71,7 @@ class Code
             case '-M':
                 return 0b1110011;
             case 'M+1':
-                return 0b1001000;
+                return 0b1110111;
             case 'M-1':
                 return 0b1110010;
             case 'D+M':

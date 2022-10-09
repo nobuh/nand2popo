@@ -24,6 +24,9 @@ class AssemblerCodeTest extends \PHPUnit\Framework\TestCase
         assertSame(0b0110001, Code::comp('!A'));
         assertSame(0b0001111, Code::comp('-D'));
         // skip
+        assertSame(0b0110111, Code::comp('A+1'));
+        assertSame(0b1110111, Code::comp('M+1'));
+        // skip
         assertSame(0b1010101, Code::comp('D|M'));
         assertSame(0b1111111, Code::comp(''));
 
